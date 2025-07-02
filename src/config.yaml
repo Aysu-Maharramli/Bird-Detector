@@ -1,0 +1,25 @@
+species:
+  - Northern Cardinal
+  - American Robin
+  - Black-capped Chickadee
+  - Mourning Dove
+  - Blue Jay
+  - House Sparrow
+  - American Goldfinch
+  - Carolina Wren
+  - Downy Woodpecker
+  - Mourning Warbler
+  - Red-winged Blackbird
+  - Song Sparrow
+  - White-breasted Nuthatch
+  - House Finch
+  - European Starling
+  - Dark-eyed Junco
+  - Tufted Titmouse
+  - Yellow Warbler
+  - Eastern Bluebird
+  - Common Grackle
+
+audio:
+  sample_rate: 16000
+  chunk_duration: 5   # seconds per clip

@@ -1,0 +1,7 @@
+data
+#src/model.py
+project-overview.rmd
+.venv/
+notebooks/.ipynb_checkpoints/
+tests
+models

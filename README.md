@@ -1,2 +1,2 @@
-# Bird-Translator
+# Bird-Detector
 
