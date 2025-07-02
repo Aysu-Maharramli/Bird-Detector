@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-# scripts/download_xc.py
-
 import os
 import csv
 import yaml
 import requests
 import boto3
 from urllib.parse import quote_plus
+from concurrent.futures import ThreadPoolExecutor
 
 # 0) AWS S3 setup
-BUCKET = "bird-detector-aysu-2025"    
+BUCKET = "bird-detector-aysu-2025"
 s3 = boto3.client("s3")
 
 # 1) Load our species list
@@ -22,48 +21,60 @@ MAX_PER_SPECIES = 100
 
 # 3) Prepare local metadata CSV folder
 os.makedirs("data/raw", exist_ok=True)
-raw_meta = []
 
-# 4) Loop over species and download
-for sp in species_list:
+# helper to check if we've already uploaded this species
+def already_done(sp):
+    species_safe = sp.replace(" ", "_")
+    resp = s3.list_objects_v2(
+        Bucket=BUCKET,
+        Prefix=f"raw/{species_safe}/",
+        MaxKeys=1
+    )
+    return "Contents" in resp
+
+# this is the per‐species work
+def download_one(sp):
+    if already_done(sp):
+        print(f"✅ SKIP {sp}  (already on S3)")
+        return
+
+    print(f"Querying X-C for {sp} …")
     query = quote_plus(sp)
-    url = BASE_URL + query
-    print(f"Querying Xeno-Canto for {sp} → {url}")
-    resp = requests.get(url).json()
-    recordings = resp.get("recordings", [])[:MAX_PER_SPECIES]
+    resp = requests.get(BASE_URL + query).json()
+    recs = resp.get("recordings", [])[:MAX_PER_SPECIES]
 
-    for rec in recordings:
+    raw_meta = []
+    species_safe = sp.replace(" ", "_")
+    for rec in recs:
         rec_id = rec["id"]
-        species_safe = sp.replace(" ", "_")
-        filename = f"{species_safe}_{rec_id}.mp3"
-        s3_key = f"raw/{species_safe}/{rec_id}.mp3"
-
-        # 4a) Download the MP3 bytes
         file_url = rec["file"]
         if file_url.startswith("//"):
             file_url = "https:" + file_url
-        print(f"  → downloading {file_url}")
+
+        # Download bytes & push straight to S3
         data = requests.get(file_url).content
+        key = f"raw/{species_safe}/{rec_id}.mp3"
+        s3.put_object(Bucket=BUCKET, Key=key, Body=data)
+        print(f"  ☁️ uploaded s3://{BUCKET}/{key}")
 
-        # 4b) Upload directly to S3 (no local disk write)
-        s3.put_object(Bucket=BUCKET, Key=s3_key, Body=data)
-        print(f"    ☁️  uploaded to s3://{BUCKET}/{s3_key}")
-
-        # 4c) Record metadata
         raw_meta.append({
-            "filename": filename,
+            "filename": f"{species_safe}_{rec_id}.mp3",
             "species": sp,
             "call_type": rec.get("type", "unknown")
         })
 
-    print(f"✅ Finished species: {sp} ({len(recordings)} recordings)")
+    # write local metadata CSV for this species
+    csv_path = f"data/raw/{species_safe}_meta.csv"
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["filename","species","call_type"])
+        writer.writeheader()
+        writer.writerows(raw_meta)
 
-# 5) Write out the raw metadata CSV locally
-csv_path = "data/raw/raw_metadata.csv"
-with open(csv_path, "w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=["filename", "species", "call_type"])
-    writer.writeheader()
-    writer.writerows(raw_meta)
+    print(f"✅ Finished {sp} ({len(recs)} recordings)")
 
-print(f"📄 Wrote raw metadata: {csv_path}")
-print("🎉 All done!")
+# 4) Kick off a thread pool to do 8 at once
+if __name__ == "__main__":
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        pool.map(download_one, species_list)
+
+    print("🎉 All species processed!")
