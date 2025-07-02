@@ -1,26 +1,37 @@
+#!/usr/bin/env python3
+# src/model.py
+
+import os
 import numpy as np
 import pandas as pd
 import joblib
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split, RandomizedSearchCV, StratifiedKFold
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from scipy.stats import randint
 import warnings
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix
+)
 
-warnings.filterwarnings("ignore", category=UserWarning)
-
+warnings.filterwarnings("ignore")
 np.random.seed(42)
 
 # 1) Read metadata
 meta = pd.read_csv("data/processed/metadata/metadata.csv")
+
+# 2) Drop any species with fewer than 2 examples
+counts = meta["label"].value_counts()
+ok_labels = counts[counts >= 2].index
+meta = meta[meta["label"].isin(ok_labels)].reset_index(drop=True)
+
 species_names = meta["species"].unique()
 
-# 2) Load features & labels
-#    we stack MFCC + delta + delta-delta (precomputed in extract_features.py)
+# 3) Load features & labels
 X = np.vstack([np.load(fp) for fp in meta["feature_path"]])
 y = meta["label"].values
 
-# 3) Split out a held-out test set
+# 4) Split (stratified)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y,
     test_size=0.2,
@@ -28,51 +39,25 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 
-# 4) Hyperparameter tuning via RandomizedSearchCV
-param_dist = {
-    'n_estimators': [100, 200, 400],
-    'max_depth': [None, 20, 50],
-    'min_samples_split': [2, 5, 10],
-    'max_features': ['sqrt', 'log2']
-}
-
-base_clf = RandomForestClassifier(
-    class_weight='balanced',
+# 5) Fit RF (with balanced class weights)
+clf = RandomForestClassifier(
+    n_estimators=200,
+    max_depth=None,
+    class_weight="balanced",
     random_state=42,
-    n_jobs=-1
 )
-
-rs = RandomizedSearchCV(
-    estimator=base_clf,
-    param_distributions=param_dist,
-    n_iter=10,
-    cv=StratifiedKFold(n_splits=3, shuffle=True, random_state=42),
-    scoring='accuracy',
-    verbose=1,
-    n_jobs=-1,
-    random_state=42
-)
-
-print("🔍 Running hyperparameter search...")
-rs.fit(X_train, y_train)
-print("✅ Best hyperparameters:", rs.best_params_)
-
-# 5) Train final model on full train set
-clf = rs.best_estimator_
 clf.fit(X_train, y_train)
 
-# 6) Evaluate on the held-out test set
+# 6) Evaluate
 y_pred = clf.predict(X_test)
-acc = accuracy_score(y_test, y_pred)
-print(f"\nTest accuracy: {acc:.4f}\n")
-
-print("Classification report:")
+print("Test accuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification report:")
 print(classification_report(y_test, y_pred, target_names=species_names))
 
 cm = confusion_matrix(y_test, y_pred, normalize="true")
 print("\nNormalized confusion matrix:\n", cm)
 
-# 7) Persist model
-out_path = "models/bird_detector_rf.pkl"
-joblib.dump(clf, out_path)
-print(f"\nSaved tuned model to {out_path}")
+# 7) Save model
+os.makedirs("models", exist_ok=True)
+joblib.dump(clf, "models/bird_detector_rf.pkl")
+print("\nSaved model to models/bird_detector_rf.pkl")
