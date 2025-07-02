@@ -8,5 +8,6 @@ tests
 models
 config_short.yaml
 merge_species.py
+.DS_Store
 
 
