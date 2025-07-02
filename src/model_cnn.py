@@ -30,6 +30,15 @@ train_labels= [labels[i]    for i in train_idx]
 val_files   = [wav_paths[i] for i in val_idx]
 val_labels  = [labels[i]    for i in val_idx]
 
+train_ds = tf.data.Dataset.from_tensor_slices(
+    (tf.constant(train_files, dtype=tf.string),
+     tf.constant(train_labels, dtype=tf.int32))
+)
+val_ds =   tf.data.Dataset.from_tensor_slices(
+    (tf.constant(val_files,   dtype=tf.string),
+     tf.constant(val_labels,   dtype=tf.int32))
+)
+
 # 4) Decode→mel fn
 def decode_and_mel(path, label):
     raw = tf.io.read_file(path)
@@ -51,8 +60,7 @@ def decode_and_mel(path, label):
     return tf.expand_dims(mel, -1), label  # [N_MELS, time, 1]
 
 # 5) Build datasets
-def make_ds(files, labs, shuffle=False):
-    ds = tf.data.Dataset.from_tensor_slices((files, labs))
+def make_ds(ds, shuffle=False):
     if shuffle:
         ds = ds.shuffle(10_000)
     return (ds
@@ -61,8 +69,9 @@ def make_ds(files, labs, shuffle=False):
       .prefetch(tf.data.AUTOTUNE)
     )
 
-train_ds = make_ds(train_files, train_labels, shuffle=True)
-val_ds   = make_ds(val_files,   val_labels)
+train_ds = make_ds(train_ds, shuffle=True)
+val_ds   = make_ds(val_ds)
+
 
 # 6) Model
 inp = tf.keras.layers.Input((N_MELS, None, 1))
