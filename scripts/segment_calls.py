@@ -29,7 +29,7 @@ for page in paginator.paginate(Bucket=BUCKET, Prefix="raw/"):
 print(f"Found {len(mp3_keys)} MP3s in s3://{BUCKET}/raw/")
 
 # 3) Define per-file segmentation
- def segment_one(key):
+def segment_one(key):
     parts = key.split("/")
     species_safe = parts[1]
     rec_id = os.path.splitext(parts[2])[0]

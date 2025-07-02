@@ -33,7 +33,7 @@ wav_keys = [obj["Key"] for page in pages for obj in page.get("Contents", []) if 
 print(f"Found {len(wav_keys)} WAV chunks in s3://{BUCKET}/interim/")
 
 # 4) Define feature extraction
- def extract_one(key):
+def extract_one(key):
     clip = os.path.basename(key)
     species = clip.rsplit("_", 2)[0].replace("_", " ")
     obj = s3.get_object(Bucket=BUCKET, Key=key)
