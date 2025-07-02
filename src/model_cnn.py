@@ -34,9 +34,9 @@ train_ds = tf.data.Dataset.from_tensor_slices(
     (tf.constant(train_files, dtype=tf.string),
      tf.constant(train_labels, dtype=tf.int32))
 )
-val_ds =   tf.data.Dataset.from_tensor_slices(
-    (tf.constant(val_files,   dtype=tf.string),
-     tf.constant(val_labels,   dtype=tf.int32))
+val_ds = tf.data.Dataset.from_tensor_slices(
+    (tf.constant(val_files, dtype=tf.string),
+     tf.constant(val_labels, dtype=tf.int32))
 )
 
 # 4) Decode→mel fn
@@ -69,9 +69,8 @@ def make_ds(ds, shuffle=False):
       .prefetch(tf.data.AUTOTUNE)
     )
 
-train_ds = make_ds(train_ds, shuffle=True)
-val_ds   = make_ds(val_ds)
-
+train_ds = make_ds(train_ds, shuffle=True).repeat()
+val_ds   = make_ds(val_ds).repeat()
 
 # 6) Model
 inp = tf.keras.layers.Input((N_MELS, None, 1))
@@ -93,14 +92,21 @@ model.summary()
 # 7) Train + checkpoint best
 os.makedirs("models", exist_ok=True)
 ckpt = tf.keras.callbacks.ModelCheckpoint(
-    "models/bird_detector_cnn.h5",
+    "models/bird_detector_cnn.keras",
     save_best_only=True,
     monitor="val_accuracy"
 )
+
+steps_per_epoch   = len(train_files) // BATCH
+validation_steps  = len(val_files)   // BATCH
+
 model.fit(
     train_ds,
-    validation_data=val_ds,
     epochs=EPOCHS,
+    steps_per_epoch=steps_per_epoch,
+    validation_data=val_ds,
+    validation_steps=validation_steps,
     callbacks=[ckpt]
 )
-print("✅ Trained CNN (best in models/bird_detector_cnn.h5)")
+
+print("✅ Trained CNN (best in models/bird_detector_cnn.keras)")
