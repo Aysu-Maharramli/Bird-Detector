@@ -1,3 +1,4 @@
+.gitignore
 data
 #src/model.py
 project-overview.rmd
@@ -5,3 +6,7 @@ project-overview.rmd
 notebooks/.ipynb_checkpoints/
 tests
 models
+config_short.yaml
+merge_species.py
+
+
