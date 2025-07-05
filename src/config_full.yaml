@@ -1,0 +1,551 @@
+# src/config_remarkable100.yaml
+
+species:
+  - Northern Cardinal
+  - American Robin
+  - Black-capped Chickadee
+  - Mourning Dove
+  - Blue Jay
+  - House Sparrow
+  - American Goldfinch
+  - Carolina Wren
+  - Downy Woodpecker
+  - Mourning Warbler
+  - Red-winged Blackbird
+  - Song Sparrow
+  - White-breasted Nuthatch
+  - House Finch
+  - European Starling
+  - Dark-eyed Junco
+  - Tufted Titmouse
+  - Yellow Warbler
+  - Eastern Bluebird
+  - Common Grackle
+
+  # - Full list
+   
+  - Allen's Hummingbird
+  - American Avocet
+  - American Bittern
+  - American Black Duck
+  - American Dipper
+  - American Golden-Plover
+  - American Goldfinch
+  - American Kestrel
+  - American Oystercatcher
+  - American Pipit
+  - American Redstart
+  - American Robin
+  - American Three-toed Woodpecker
+  - American White Pelican
+  - American Wigeon
+  - American Woodcock
+  - Ancient Murrelet
+  - Andean Cock-of-the-Rock
+  - Anhinga
+  - Arctic Tern
+  - Atlantic Puffin
+  - Baird's Sparrow
+  - Bald Eagle
+  - Baltimore Oriole
+  - Band-tailed Pigeon
+  - Bank Swallow
+  - Barn Owl
+  - Barn Swallow
+  - Barrow's Goldeneye
+  - Bay-breasted Warbler
+  - Bearded Bellbird
+  - Bell's Vireo
+  - Bendire's Thrasher
+  - "Bewick\u2019s Swan"
+  - Black Oystercatcher
+  - Black Rosy-Finch
+  - Black Skimmer
+  - Black Swift
+  - Black Tern
+  - Black Vulture
+  - Black-and-white Warbler
+  - Black-backed Woodpecker
+  - Black-bellied Plover
+  - Black-billed Cuckoo
+  - Black-billed Magpie
+  - Black-capped Chickadee
+  - Black-capped Vireo
+  - Black-chinned Hummingbird
+  - Black-chinned Sparrow
+  - Black-crested Titmouse
+  - Black-crowned Night-Heron
+  - Black-faced Spoonbill
+  - Black-headed Grosbeak
+  - Black-legged Kittiwake
+  - Black-throated Blue Warbler
+  - Black-throated Gray Warbler
+  - Black-throated Green Warbler
+  - Black-winged Stilt
+  - Blackburnian Warbler
+  - Blackpoll Warbler
+  - Blue Jay
+  - Blue-crowned Motmot
+  - Blue-winged Teal
+  - Blue-winged Warbler
+  - Boat-tailed Grackle
+  - Bobolink
+  - Bohemian Waxwing
+  - Boreal Chickadee
+  - Boreal Owl
+  - Brant
+  - Brewer's Blackbird
+  - Brewer's Sparrow
+  - Broad-winged Hawk
+  - Bronzed Cowbird
+  - Brown Creeper
+  - Brown Kiwi
+  - Brown Pelican
+  - Brown-capped Rosy-Finch
+  - Brown-headed Nuthatch
+  - Bufflehead
+  - Bullock's Oriole
+  - Burrowing Owl
+  - California Condor
+  - California Gull
+  - Calliope Hummingbird
+  - Canada Warbler
+  - Cape May Warbler
+  - Carolina Wren
+  - Caspian Tern
+  - Cassin's Auklet
+  - Cassin's Finch
+  - Cave Swallow
+  - Cerulean Warbler
+  - Chestnut-collared Longspur
+  - Chestnut-sided Warbler
+  - Cinnamon Teal
+  - Clapper Rail
+  - Clark's Grebe
+  - Clark's Nutcracker
+  - Clay-colored Sparrow
+  - Common Cuckoo
+  - Common Eider
+  - Common Goldeneye
+  - Common Grackle
+  - Common Kingfisher
+  - Common Loon
+  - Common Merganser
+  - Common Nightingale
+  - Common Poorwill
+  - Common Raven
+  - Common Redpoll
+  - Common Swift
+  - Common Tern
+  - Congo Peafowl
+  - Connecticut Warbler
+  - Cordilleran Flycatcher
+  - Corncrake
+  - Crested Caracara
+  - Dalmatian Pelican
+  - Dark-eyed Junco
+  - Dartford Warbler
+  - "Darwin\u2019s Finches"
+  - Double-crested Cormorant
+  - Dovekie
+  - Downy Woodpecker
+  - Dunlin
+  - Dusky Flycatcher
+  - Dusky/Sooty Grouse
+  - Eared Grebe
+  - Eastern Bluebird
+  - Eastern Whip-poor-will
+  - Egyptian Plover
+  - Emperor Goose
+  - Emperor Penguin
+  - Eurasian Bittern
+  - Eurasian Eagle-Owl
+  - Eurasian Skylark
+  - Eurasian Wigeon
+  - Eurasian Wryneck
+  - European Bee-eater
+  - European Starling
+  - European White Stork
+  - Evening Grosbeak
+  - Ferruginous Hawk
+  - Fish Crow
+  - Flightless Cormorant
+  - Florida Scrub-Jay
+  - Forster's Tern
+  - Franklin's Gull
+  - Gadwall
+  - Gila Woodpecker
+  - Gilded Flicker
+  - Glaucous-winged Gull
+  - Glossy Ibis
+  - Golden Eagle
+  - Golden-cheeked Warbler
+  - Golden-crowned Kinglet
+  - Golden-fronted Woodpecker
+  - Golden-winged Warbler
+  - Gray Flycatcher
+  - Gray Vireo
+  - Gray-cheeked Thrush
+  - Gray-crowned Rosy-Finch
+  - Gray-necked Picathartes
+  - Great Black-backed Gull
+  - Great Blue Turaco
+  - Great Bustard
+  - Great Gray Owl
+  - Greater Roadrunner
+  - Greater Sage-Grouse
+  - Greater Scaup
+  - Greater White-fronted Goose
+  - Greater Yellowlegs
+  - Green-tailed Towhee
+  - Gull-billed Tern
+  - "Gurney\u2019s Pitta"
+  - Gyrfalcon
+  - Hairy Woodpecker
+  - Hammond's Flycatcher
+  - Harpy Eagle
+  - Henslow's Sparrow
+  - Hepatic Tanager
+  - Hermit Thrush
+  - Hermit Warbler
+  - Herring Gull
+  - Hoatzin
+  - Hooded Merganser
+  - Hooded Oriole
+  - Hooded Warbler
+  - Hoopoe
+  - Horned Grebe
+  - House Finch
+  - House Sparrow
+  - Hutton's Vireo
+  - Hyacinth Macaw
+  - Hypocolius
+  - Ibisbill
+  - Ivory-billed Woodpecker
+  - Juniper Titmouse
+  - Kagu
+  - Kakapo
+  - King Eider
+  - King Rail
+  - "Kirtland\u2019s Warbler"
+  - Kittlitz's Murrelet
+  - Lammergeyer
+  - Laughing Gull
+  - Laughing Kookaburra
+  - Lawrence's Goldfinch
+  - Le Conte's Sparrow
+  - Le Conte's Thrasher
+  - Least Bittern
+  - Least Flycatcher
+  - Least Grebe
+  - Least Tern
+  - Lesser Flamingo
+  - Lesser Prairie-Chicken
+  - Lesser Scaup
+  - Lesser Yellowlegs
+  - Lewis's Woodpecker
+  - Lilac-breasted Roller
+  - Little Gull
+  - Long-billed Curlew
+  - Long-billed Thrasher
+  - Long-eared Owl
+  - Long-tailed Paradise-whydah
+  - Long-tailed Tit
+  - Louisiana Waterthrush
+  - Magnificent Frigatebird
+  - Magnolia Warbler
+  - Mallard
+  - Malleefowl
+  - Mangrove Cuckoo
+  - Marbled Godwit
+  - Marsh Wren
+  - Mauritius Pink Pigeon
+  - McCown's Longspur
+  - Merlin
+  - Mexican Jay
+  - Mississippi Kite
+  - "Montagu\u2019s Harrier"
+  - Montezuma Quail
+  - Mountain Bluebird
+  - Mountain Chickadee
+  - Mountain Plover
+  - Mountain Quail
+  - Mourning Dove
+  - Mourning Warbler
+  - Nashville Warbler
+  - Nelson's/Saltmarsh Sparrow (Sharp-tailed Sparrow)
+  - New Caledonian Crow
+  - Noisy Scrub-bird
+  - Northern Cardinal
+  - Northern Fulmar
+  - Northern Gannet
+  - Northern Harrier
+  - Northern Hawk Owl
+  - Northern Lapwing
+  - Northern Mockingbird
+  - Northern Pygmy-Owl
+  - Northern Raven
+  - Northern Saw-whet Owl
+  - Northern Shoveler
+  - Oilbird
+  - Olive Warbler
+  - Orchard Oriole
+  - Osprey
+  - Ostrich
+  - Ovenbird
+  - Pacific Golden-Plover
+  - Pacific-slope Flycatcher
+  - Painted Redstart
+  - Palm Warbler
+  - Parasitic Jaeger
+  - Peregrine
+  - Peregrine Falcon
+  - Philadelphia Vireo
+  - Pigeon Guillemot
+  - Pine Grosbeak
+  - Pine Siskin
+  - Pine Warbler
+  - Pinyon Jay
+  - Piping Plover
+  - Plains-wanderer
+  - Pomarine Jaeger
+  - Prairie Falcon
+  - Purple Finch
+  - Purple Sandpiper
+  - Pygmy Nuthatch
+  - Razorbill
+  - Red Crossbill
+  - Red Knot
+  - Red-backed Shrike
+  - Red-billed Tropicbird
+  - Red-breasted Goose
+  - Red-breasted Merganser
+  - Red-breasted Nuthatch
+  - Red-breasted Sapsucker
+  - Red-capped Manakin
+  - Red-cockaded Woodpecker
+  - Red-crowned Crane
+  - Red-faced Warbler
+  - Red-naped Sapsucker
+  - Red-necked Grebe
+  - Red-necked Phalarope
+  - Red-throated Loon
+  - Red-winged Blackbird
+  - Reddish Egret
+  - Redhead
+  - Resplendent Quetzal
+  - Rhinoceros Auklet
+  - Rhinoceros Hornbill
+  - Ring-billed Gull
+  - Ring-necked Duck
+  - Rock Sandpiper
+  - Roseate Spoonbill
+  - "Ross\u2019s Gull"
+  - Royal Tern
+  - Ruddy Turnstone
+  - Ruff
+  - Ruffed Grouse
+  - Rufous Hummingbird
+  - Rufous-crowned Sparrow
+  - Rusty Blackbird
+  - Sage Sparrow
+  - Sage Thrasher
+  - Sandhill Crane
+  - Sandwich Tern
+  - Satyr Tragopan
+  - Scarlet Ibis
+  - Scarlet Tanager
+  - Seaside Sparrow
+  - Secretary Bird
+  - Sedge Wren
+  - Semipalmated Plover
+  - Sharp-tailed Grouse
+  - Shoebill
+  - Short-billed Dowitcher
+  - Short-eared Owl
+  - Smith's Longspur
+  - Snow Goose
+  - Snow Petrel
+  - Snowy Owl
+  - Snowy Plover
+  - Solitary Sandpiper
+  - Song Sparrow
+  - Spoon-billed Sandpiper
+  - Spotted Owl
+  - Spotted Sandpiper
+  - Sprague's Pipit
+  - Stilt Sandpiper
+  - Sunbittern
+  - Superb Lyrebird
+  - Surfbird
+  - Swainson's Hawk
+  - Swallow-tailed Kite
+  - Swamp Sparrow
+  - Sword-billed Hummingbird
+  - Takahe
+  - Tennessee Warbler
+  - Thayer's Gull
+  - Thick-billed Murre
+  - Toco Toucan
+  - Townsend's Solitaire
+  - Townsend's Warbler
+  - Tree Swallow
+  - Tricolored Blackbird
+  - Tricolored Heron
+  - Trumpeter Swan
+  - Tufted Titmouse
+  - Tundra Swan
+  - Varied Thrush
+  - Vaux's Swift
+  - Veery
+  - Vesper Sparrow
+  - Violet-green Swallow
+  - Virginia's Warbler
+  - Wallcreeper
+  - Wandering Albatross
+  - Western Bluebird
+  - Western Capercaillie
+  - Western Grebe
+  - Western Gull
+  - Western Screech-Owl
+  - Western Tanager
+  - Western Wood-Pewee
+  - Whimbrel
+  - White-breasted Nuthatch
+  - White-crowned Pigeon
+  - White-faced Ibis
+  - White-headed Woodpecker
+  - White-tailed Hawk
+  - White-tailed Kite
+  - White-throated Sparrow
+  - White-throated Swift
+  - White-winged Crossbill
+  - Whooping Crane
+  - Wild Turkey
+  - Willet
+  - Williamson's Sapsucker
+  - Willow Flycatcher
+  - Wilson's Phalarope
+  - Wilson's Plover
+  - Wilson's Warbler
+  - "Wilson\u2019s Bird-of-paradise"
+  - Winter Wren
+  - Winter/Pacific Wren
+  - Wood Duck
+  - Wood Stork
+  - Wood Thrush
+  - Worm-eating Warbler
+  - Yellow Rail
+  - Yellow Warbler
+  - Yellow-bellied Flycatcher
+  - Yellow-bellied Sapsucker
+  - Yellow-billed Loon
+  - Yellow-billed Magpie
+  - Yellow-headed Blackbird
+  - Yellow-throated Vireo
+  - Yellow-throated Warbler
+  - Zone-tailed Hawk
+
+  # — Remarkable Birds: The Top 100 —
+  - Ostrich
+  - Brown Kiwi
+  - Emperor Penguin
+  - Common Loon
+  - Wandering Albatross
+  - Snow Petrel
+  - Red-billed Tropicbird
+  - Dalmatian Pelican
+  - Northern Gannet
+  - Flightless Cormorant
+  - Magnificent Frigatebird
+  - Eurasian Bittern
+  - European White Stork
+  - Shoebill
+  - Scarlet Ibis
+  - Black-faced Spoonbill
+  - Lesser Flamingo
+  - Bewick’s Swan
+  - Snow Goose
+  - Red-breasted Goose
+  - Common Eider
+  - California Condor
+  - Bald Eagle
+  - Lammergeyer
+  - Montagu’s Harrier
+  - Harpy Eagle
+  - Secretary Bird
+  - Peregrine
+  - Malleefowl
+  - Western Capercaillie
+  - Satyr Tragopan
+  - Congo Peafowl
+  - Hoatzin
+  - Whooping Crane
+  - Red-crowned Crane
+  - Corncrake
+  - Takahe
+  - Kagu
+  - Sunbittern
+  - Great Bustard
+  - Ibisbill
+  - Black-winged Stilt
+  - Egyptian Plover
+  - Northern Lapwing
+  - Red Knot
+  - Ruff
+  - Spoon-billed Sandpiper
+  - Red-necked Phalarope
+  - Plains-wanderer
+  - Ross’s Gull
+  - Arctic Tern
+  - Atlantic Puffin
+  - Mauritius Pink Pigeon
+  - Kakapo
+  - Hyacinth Macaw
+  - Great Blue Turaco
+  - Common Cuckoo
+  - Greater Roadrunner
+  - Snowy Owl
+  - Eurasian Eagle-Owl
+  - Oilbird
+  - Common Swift
+  - Sword-billed Hummingbird
+  - Resplendent Quetzal
+  - Laughing Kookaburra
+  - Common Kingfisher
+  - Blue-crowned Motmot
+  - European Bee-eater
+  - Lilac-breasted Roller
+  - Hoopoe
+  - Rhinoceros Hornbill
+  - Toco Toucan
+  - Eurasian Wryneck
+  - Ivory-billed Woodpecker
+  - Gurney’s Pitta
+  - Bearded Bellbird
+  - Andean Cock-of-the-Rock
+  - Red-capped Manakin
+  - Noisy Scrub-bird
+  - Superb Lyrebird
+  - Eurasian Skylark
+  - Barn Swallow
+  - Bohemian Waxwing
+  - Hypocolius
+  - Winter Wren
+  - Northern Mockingbird
+  - Common Nightingale
+  - Dartford Warbler
+  - Gray-necked Picathartes
+  - Wallcreeper
+  - Long-tailed Tit
+  - Red-backed Shrike
+  - Wilson’s Bird-of-paradise
+  - Northern Raven
+  - New Caledonian Crow
+  - Kirtland’s Warbler
+  - Darwin’s Finches
+  - Long-tailed Paradise-whydah
+
+audio:
+  sample_rate: 16000
+  chunk_duration: 5  

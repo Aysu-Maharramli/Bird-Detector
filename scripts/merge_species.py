@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import yaml
 
-# 1) Load your original config:
+# 1) Load original config:
 with open("src/config.yaml") as f:
     base = yaml.safe_load(f)
 orig = base["species"]
 
-# 2) Paste your new species here as a Python list:
+# 2) Paste new species here:
 new_species = [
     "Allen's Hummingbird",
     "American Avocet",

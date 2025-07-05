@@ -16,7 +16,7 @@ s3 = boto3.client("s3")
 # 1) Load config
 cfg = yaml.safe_load(open("src/config.yaml"))
 SR = cfg["audio"]["sample_rate"]
-CHUNK_DUR = cfg["audio"]["chunk_duration"]  # seconds per clip
+CHUNK_DUR = cfg["audio"]["chunk_duration"]  
 
 # 2) List all raw MP3 keys in S3
 mp3_keys = []

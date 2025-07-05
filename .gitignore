@@ -1,13 +1,12 @@
 .gitignore
 data
-#src/model.py
 project-overview.rmd
 .venv/
-notebooks/.ipynb_checkpoints/
+notebooks/
 tests
-models
 config_short.yaml
 merge_species.py
 .DS_Store
+*.ipynb
 
 

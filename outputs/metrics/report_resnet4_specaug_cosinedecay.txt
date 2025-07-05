@@ -1,0 +1,28 @@
+Classification Report
+====================
+
+                         precision    recall  f1-score   support
+
+      Northern Cardinal       0.87      0.81      0.84       276
+         American Robin       0.88      0.84      0.86       285
+ Black-capped Chickadee       0.82      0.88      0.85       245
+          Mourning Dove       0.83      0.80      0.82       263
+               Blue Jay       0.64      0.84      0.73       173
+          House Sparrow       0.93      0.98      0.95       391
+     American Goldfinch       0.83      0.86      0.84       255
+          Carolina Wren       0.85      0.86      0.85       182
+       Downy Woodpecker       0.64      0.84      0.73       152
+       Mourning Warbler       0.94      0.83      0.88       279
+   Red-winged Blackbird       0.88      0.80      0.84       274
+           Song Sparrow       0.81      0.46      0.59       148
+White-breasted Nuthatch       0.98      0.79      0.88       180
+            House Finch       0.91      0.75      0.82       218
+        Dark-eyed Junco       0.94      0.81      0.87       288
+        Tufted Titmouse       0.68      0.81      0.74       178
+         Yellow Warbler       0.64      0.80      0.72       147
+       Eastern Bluebird       0.78      0.88      0.83       238
+         Common Grackle       0.82      0.88      0.85       235
+
+               accuracy                           0.83      4407
+              macro avg       0.82      0.82      0.81      4407
+           weighted avg       0.84      0.83      0.83      4407
